@@ -1,33 +1,46 @@
 {
-  "homepage": "https://dacrafter1234567.github.io/csce242react/",
   "name": "csce242react",
-  "version": "1.0.0",
-  "description": "CSCE242 React Projects",
-  "main": "index.js",
- "scripts": {
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build",
-  "test": "echo \"Error: no test specified\" && exit 1"
-},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dacrafter1234567/csce242react.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dacrafter1234567/csce242react/issues"
-  },
-  "homepage": "https://github.com/dacrafter1234567/csce242react#readme",
+  "version": "0.1.0",
+  "private": false,
+  "homepage": "react-spring-2025",
   "dependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^13.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "react-router-dom": "^7.4.0"
   }
 }
