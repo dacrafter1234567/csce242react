@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "/dacrafter1234567/csce242react/static/js/main.e95f834a.js",
-    "index.html": "/dacrafter1234567/csce242react/index.html",
-    "main.e95f834a.js.map": "/dacrafter1234567/csce242react/static/js/main.e95f834a.js.map"
+    "main.css": "/csce242react/static/css/main.4f1d0aeb.css",
+    "main.js": "/csce242react/static/js/main.a0badf57.js",
+    "index.html": "/csce242react/index.html",
+    "main.4f1d0aeb.css.map": "/csce242react/static/css/main.4f1d0aeb.css.map",
+    "main.a0badf57.js.map": "/csce242react/static/js/main.a0badf57.js.map"
   },
   "entrypoints": [
-    "static/js/main.e95f834a.js"
+    "static/css/main.4f1d0aeb.css",
+    "static/js/main.a0badf57.js"
   ]
 }
