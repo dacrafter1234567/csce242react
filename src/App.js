@@ -1,12 +1,12 @@
-// src/App.js
 import React from 'react';
+import HomePage from './pages/Home';  // Ensure path is correct
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>Welcome to Arconia Wiki</h1>
+    <div>
+      <HomePage />  {/* This should be your HomePage component */}
     </div>
   );
-}
+};
 
 export default App;

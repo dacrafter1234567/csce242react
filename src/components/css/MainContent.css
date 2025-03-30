@@ -1,0 +1,9 @@
+.main-content {
+    background-color: lightgray;  /* Just to see if the section is rendered */
+    padding: 20px;
+    border: 1px solid black;
+  }
+  .undernavtext {
+    background-color: lightblue;
+  }
+  

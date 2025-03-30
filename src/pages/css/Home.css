@@ -1,10 +1,5 @@
-/* src/pages/css/Home.css */
-
-body {
+.main-content {
+    padding: 20px;
     background-color: lightgray;
-  }
-  
-  h1 {
-    color: blue;
   }
   
