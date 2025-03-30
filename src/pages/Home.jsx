@@ -1,20 +1,17 @@
-import './css/Home.css';
-import Tree from '../components/Tree';
-function App() {
-  return (
-    <>
-      <section className="columns">
-        <Tree 
-          name="Live Oak"
-          description="Doesn't lose it's leaves"
-          image="images/live-oak.jpeg"/>
-        <Tree 
-          name="Dogwood"
-          description="Flowers in spring"
-          image="images/dogwood.jpeg" />
-      </section>
-    </>
-  );
-}
+import React from 'react';
+import Header from '../components/Header';
+import MainContent from '../components/MainContent';
+import Footer from '../components/Footer';
+import '../css/Home.css';
 
-export default App;
+const HomePage = () => {
+  return (
+    <div id="content">
+      <Header />
+      <MainContent />
+      <Footer />
+    </div>
+  );
+};
+
+export default HomePage;
