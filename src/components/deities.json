@@ -2,7 +2,7 @@
     {
       "name": "Auronix, The Keeper of Laylines",
       "elemental_affinity": "Arcana",
-      "description": "Auronix is the eternal guardian of the Laylines, the roots of magical energy that span the world of Arconia...",
+      "description": "Auronix is the eternal guardian of the Laylines, the roots of magical energy that span the world of Arconia. Known as the creator of arcane magic, Auronix is believed to be one of the oldest and most powerful of the deities. With a gaze as sharp as a spellcaster's incantation, Auronix watches over the balance of magic, ensuring that it flows freely and harmoniously throughout the realms. Auronix holds domains over: Arcane Magic, Intelligent Creatures, Natural Elements, and Enchanting.",
       "gender": "Male",
       "side": "Radiance",
       "alignment": "Lawful Neutral",
@@ -14,7 +14,7 @@
     {
       "name": "Mertis, Creator of Planes",
       "elemental_affinity": "Creation",
-      "description": "Mertis is the god of creation and the architect of the planes...",
+      "description": "Mertis is the divine architect who forged the very fabric of existence, shaping planes and dimensions with boundless creativity. With each stroke of divine inspiration, Mertis breathes life into new worlds, crafting intricate tapestries of reality that teem with the wonders of creation. Mertis holds domains over: Creation of New Life, Invention, Assembly and Manufacturing, and Architecture.",
       "gender": "Male",
       "side": "Neutral",
       "alignment": "Neutral Good",
@@ -32,7 +32,7 @@
       "alignment": "Neutral Evil",
       "personality": "Cunning, Elusive, Deceiving, Observant, Tactical",
       "devoted_guilds": ["Artemis' Recurve", "Claw of the Wraith", "Cry of the Beast", "Deals with the Devil", "Joker's Apprentice", "Void Walkers"],
-      "image": "Darkness--DryntiasQueenOfTheVoid"
+      "image": "Darkness--DryntiasQueenOfTheVoid.jpg"
     }
     ,
     {
@@ -56,7 +56,7 @@
       "alignment": "True Neutral",
       "personality": "Steadfast, Calm, Stoic, Wise, Patient, Bold",
       "devoted_guilds": ["Cry of the Beast", "Lunks", "Tekken Coalition"],
-      "image": ""
+      "image": "Earth--AlterrTheGreatEarthbound.JPG"
     }
     ,
     {
@@ -68,7 +68,7 @@
       "alignment": "Chaotic Neutral",
       "personality": "Spiteful, Overconfident, Cunning, Ambitoius",
       "devoted_guilds": ["Cry of the Beast", "The Way of the Current"],
-      "image": ""
+      "image": "Energy--ErgovitsChampionOfTheCurrent.jpg"
     }
     ,
     {
@@ -80,7 +80,7 @@
       "alignment": "Lawful Neutral",
       "personality": "Kind, Valorous, Courageous, Passionate, Caring",
       "devoted_guilds": ["Cry of the Beast", "The Bountiful Feast", "The Crested Catch", "The Iron Hearth", "The Phoenix Armament", "The Sea Dogs"],
-      "image": ""
+      "image": "Fire--UkpyrrhaFlameOfTheAncients.jpg"
     }
     ,
     {
@@ -92,7 +92,7 @@
       "alignment": "Chaotic Neutral",
       "personality": "Varies greatly, typically always Highly Intelligent",
       "devoted_guilds": ["The Shifter's Conclave"],
-      "image": ""
+      "image": "Form--EssoektuTheUnboundedChangeling.jpg"
     }
     ,
     {
@@ -104,7 +104,7 @@
       "alignment": "Lawful Neutral",
       "personality": "Mystic, Thoughtful, Omnipresent, Resolute",
       "devoted_guilds": ["Cry of the Beast", "Force of Ardor", "Skywalker Kin"],
-      "image": ""
+      "image": "Gravity--LegyryxThePlanetaryForce.jpg"
     }
     ,
     {
@@ -116,7 +116,7 @@
       "alignment": "Neutral Evil",
       "personality": "Bitter, Vengeful, Stubborn, Ruthless, Keen",
       "devoted_guilds": ["Cry of the Beast", "The Glaciate Guard", "Whet Walkers"],
-      "image": ""
+      "image": "Ice--Seirl-OcryosTheFrozenBlade.jpg"
     }
     ,
     {
@@ -128,7 +128,7 @@
       "alignment": "Chaotic Evil",
       "personality": "Wily, Playful, Astute, Observant, Perceptive, Deceitful, Curious",
       "devoted_guilds": ["Holo Grandeur", "Occult of Laverna", "The Highland Shroud"],
-      "image": ""
+      "image": "Illusion--MystliertisTheVehementTrickster.jpg"
     }
     ,
     {
@@ -140,7 +140,7 @@
       "alignment": "Lawful Good",
       "personality": "Motherly, Kind, Peaceful, Charitous, Heavenly",
       "devoted_guilds": ["Cry of the Beast", "Echo of the Wild", "The Divine Touch", "The Starlight Knights"],
-      "image": ""
+      "image": "Light--SeralineTheUndyingStar.jpg"
     }
     ,
     {
@@ -152,7 +152,7 @@
       "alignment": "True Neutral",
       "personality": "Stoic, Zealous, Patriotic, Unyeilding when provoked, Tenacious",
       "devoted_guilds": ["Cry of the Beast", "Rage of the Wake", "Sanguine Wolverines", "The Blitz Riders", "The Clasp of Steel"],
-      "image": ""
+      "image": "Lightning--OrathisTheEminentStormborn.jpg"
     }
     ,
     {
@@ -164,7 +164,7 @@
       "alignment": "True Neutral",
       "personality": "Unyeilding, Resourceful, Defensive, Stoic, Protective, Vigorous",
       "devoted_guilds": ["The Taker's Refuge", "The Fortress Brotherhood", "The Iron Hearth", "Thread of Ariadne"],
-      "image": ""
+      "image": "Metal-FerrsatoxTheMightyShield.jpg"
     }
     ,
     {
@@ -176,7 +176,7 @@
       "alignment": "True Neutral",
       "personality": "Omnicient, Intelligent, Perceptive, Intuitive, Wise, Strategic",
       "devoted_guilds": ["Sight of the Neural"],
-      "image": ""
+      "image": "Mind--JelaneurTheGrandEyeSeer.jpg"
     }
     ,
     {
@@ -188,7 +188,7 @@
       "alignment": "Lawful Good",
       "personality": "Motherly, Kind, Nurturing, Caring, Peaceful, Resourceful",
       "devoted_guilds": ["Cry of the Beast", "Echo of the Wild", "The Great Yield", "Thread of Ariadne"],
-      "image": ""
+      "image": "Nature--ViristynTheWildMother.jpg"
     }
     ,
     {
@@ -200,7 +200,7 @@
       "alignment": "Neutral Evil",
       "personality": "Corruptive, Deceitful, Malignant, Toxic, Spiteful, Defensive",
       "devoted_guilds": ["Art of the Brew", "The Serpent Brotherhood"],
-      "image": ""
+      "image": "Poison--VenoliskCorruptorOfRealms.jpg"
     }
     ,
     {
@@ -212,7 +212,7 @@
       "alignment": "Chaotic Evil",
       "personality": "Reclusive, Precise, Secretive, Silent",
       "devoted_guilds": ["Artemis' Recurve", "Claw of the Wraith", "Cry of the Beast", "Eyes of Pellonia", "The Hidden Blade", "The Hunt of the Gods", "The Shadows of Salem", "Vestige of the Eagle"],
-      "image": ""
+      "image": "Shadow--KershnaTheMaskedEspionage.jpg"
     }
     ,
     {
@@ -224,7 +224,7 @@
       "alignment": "Chaotic Evil",
       "personality": "Savage, Relentless, Predatory, Elusive",
       "devoted_guilds": ["Claw of the Wraith", "Cry of the Beast", "The Black Rose Pirates", "Vail of the Shrouded"],
-      "image": ""
+      "image": "Smoke--YukSylnorTheShroudedHunter.jpg"
     }
     ,
     {
@@ -236,7 +236,7 @@
       "alignment": "Neutral Good",
       "personality": "Passionate, Creative, Chatty, Extrovertive",
       "devoted_guilds": ["Lyre of the Gods", "The Madric Muse", "The Tide of Hades"],
-      "image": ""
+      "image": "Sound--MadrisTheCelestialMuse.jpg"
     }
     ,
     {
@@ -248,7 +248,7 @@
       "alignment": "Chaotic Good",
       "personality": "Fidgety, Social, Chronically Restless",
       "devoted_guilds": ["Boots of Hermes", "The Atlas Driven"],
-      "image": ""
+      "image": "Speed--VerokinetisMessengerOfTheGods.jpg"
     }
     ,
     {
@@ -260,7 +260,7 @@
       "alignment": "Lawful Neutral",
       "personality": "Stoic, Adaptable, Fair, Ruthless if provoked, Kind if gratified",
       "devoted_guilds": ["The Call of the Tides", "The Archeon Scourgers, Ralkor Shipping Co."],
-      "image": ""
+      "image": "Water--HaedronmirTheDeepMystic.jpg"
     }
     ,
     {
@@ -272,7 +272,7 @@
       "alignment": "Chaotic Neutral",
       "personality": "Ethereal, Calm, Sweet, Shy, Guiding, Artistic",
       "devoted_guilds": ["Cry of the Beast", "The Black Rose Pirates", "The Cyclone's Reach", "The Tide of Hades"],
-      "image": ""
+      "image": "Wind--AeropirrTheFourWinds.jpg"
     }
   ]
   
