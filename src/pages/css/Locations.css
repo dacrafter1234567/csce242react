@@ -1,0 +1,10 @@
+.itembar{
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin: auto;
+    padding: 0;
+    margin-bottom: 3%;
+    background-color: antiquewhite;
+    color: #202020;
+}

@@ -1,0 +1,238 @@
+.headerimage{
+    width: 100%;
+    z-index: 0;
+    position: absolute;
+    background-image: none;
+    
+}
+
+main{
+    margin-top: 290px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    background-color: #202020 !important;
+    display: absolute;
+    padding: 40px;
+    padding-top: 1px;
+}
+
+.bigleft{
+    flex: 5;
+    background-color: #202020;
+    margin-bottom: 0;
+}
+
+.smallright{
+    display: none;
+    flex: 1;
+    background-color: #202020;
+    margin-top: 0px;
+    margin-bottom: 0;
+    margin-left: 3%;
+}
+
+
+.wikiintro{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex: 1;
+}
+
+
+.wikinav{
+    justify-content: right;
+    text-align: right;
+    display: none;
+    flex: 1;
+}
+
+.largereswikinav{
+    display: flex;
+}
+
+.undernavtext{
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 0;
+    color: white;
+}
+
+.righttable{
+  display: flex;
+  margin: 30px;
+  flex:1;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.righttable img{
+  margin: 8px;
+}
+
+.righttable p{
+  margin-top: 5px;
+}
+
+.righttable h4{
+  text-align: left;
+  margin-left: 15px;
+  margin-bottom: 0;
+
+}
+
+.user{
+  color: #3084d4;
+  margin-top: 10px;
+  margin-left: 25px;
+  text-align: left;
+}
+
+
+.pageportal img{
+  border: solid 1px white;
+}
+
+.righttable1 img{
+  border: solid 1px white;
+}
+
+.pageportalitems{
+  padding: 10px;
+  margin: 0;
+}
+
+.column{
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.resources{
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+
+.discordstaff{
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.bottomstaff h4{
+  margin-left: 20px;
+  text-align: left;
+}
+
+
+.bottommobilestuff{
+  padding-bottom: 60px;
+  display: block;
+  background-color: #202020;
+}
+
+.bottomdiscord{
+  flex: 1;
+  margin: 4%;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.bottomdiscord img{
+  width: 95%;
+}
+
+.bottomstaff{
+  flex: 1;
+  margin: 4%;
+  margin-top: 0;
+  margin-bottom: 0;
+  min-width: 200px;
+}
+
+.portal{
+  justify-content: center;
+  display: block;
+  flex: 1;
+  margin: 10px;
+}
+
+.portal img{
+  width: 125px;
+  height: 120px;
+}
+
+.portal p{
+  margin-top: 5px;
+  color:#d4a03a;
+  font-size: small;
+}
+
+.logoimg{
+  margin-top: -75px;
+  width: 400px;
+  border: 3px solid #d4a03a;
+  border-radius: 15px;
+}
+
+@media (min-width: 700px) {
+
+  .flex-container {
+      display: flex;
+  }
+
+  .searchcol{
+      display: flex;
+  }
+
+  .searchiconcol{
+      display: none;
+  }
+
+  main{
+      margin-left: 3%;
+      margin-right: 3%;
+  }
+
+  .pageportalitems section{
+      max-width: 50%;
+      padding: 10px;
+      margin: 0;
+  }
+
+  .roundabout img{
+      width: 90%;
+  }
+
+  .bottommobilestuff{
+      margin-left: 3%;
+      margin-right: 3%;
+  }
+}
+
+@media (min-width: 1250px) {
+    
+  .smallright{
+      display: block;
+  }
+
+  .pageportalitems{
+      display: block;
+  }
+
+  .pageportalitems section{
+      max-width: 80%;
+      padding: 10px;
+      margin: 0;
+  }
+
+  .bottommobilestuff{
+      display: none;
+  }
+
+  .roundabout img{
+      width: 70%;
+  }
+}

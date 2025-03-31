@@ -1,0 +1,102 @@
+#main-header{
+  background-color: #051f40;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.logocol{
+  flex: 1;
+}
+
+.logocol h2{
+  color: white;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 5px;
+  text-align: center;
+}
+
+.logocol h2:hover{
+  color: #021a36;
+}
+
+.col9of14{
+  flex: 10;
+}
+
+.col9of14 hr{
+  margin-top: 23px;
+  margin-left: 5px;
+  margin-right: 15px;
+}
+
+
+.searchcol{
+  flex: 2;
+  display: none;
+}
+
+.searchcol img{
+  margin-bottom: -7px;
+}
+
+
+.searchiconcol{
+  flex: 2;
+  margin: auto;
+  text-align: right;
+}
+
+.searchiconcol img{
+  width: 35px;
+  margin: 0;
+  margin-bottom: -7px;
+}
+
+.logincol{
+  flex: 1;
+}
+
+.logincol h2{
+  color: white;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.logincol h2:hover{
+  color: #021a36;
+}
+
+.logocol, .col9of14, .searchcol, .logincol{
+  padding: 5px;
+  margin: 5px;
+}
+
+.signinbtn {
+  background:none;
+  border: none;
+  margin-top: 3px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+
+
+@media (min-width: 700px) {
+
+  .flex-container {
+      display: flex;
+  }
+
+  .searchcol{
+      display: flex;
+  }
+
+  .searchiconcol{
+      display: none;
+  }
+}
