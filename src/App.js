@@ -1,11 +1,24 @@
 import React from 'react';
-import HomePage from './pages/Home';  // Ensure path is correct
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import HomePage from './pages/Home';
+import Locations from './pages/Locations';
+import Characters from './pages/Characters';
+import Affinities from './pages/Affinities';
 
 const App = () => {
   return (
-    <div>
-      <HomePage />  {/* This should be your HomePage component */}
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/items" element={<Items />} />
+          <Route path="/locations" element={<Locations />} />
+          <Route path="/characters" element={<Characters />} />
+          <Route path="/affinities" element={<Affinities />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 };
 
