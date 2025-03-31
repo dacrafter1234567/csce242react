@@ -8,6 +8,7 @@ import Affinities from './pages/Affinities';
 
 const App = () => {
   return (
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Router>
       <Layout>
         <Routes>
@@ -19,6 +20,7 @@ const App = () => {
         </Routes>
       </Layout>
     </Router>
+    </BrowserRouter>
   );
 };
 
