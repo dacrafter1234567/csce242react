@@ -66,7 +66,7 @@ const AffinitiesContent = () => {
     })();
   }, []);
 
-  const imageBaseUrl = "http://localhost:3000/images/";
+  const imageBaseUrl = "http://localhost:3000/public/images/";
 
   return (
     <div className="deity-list">
@@ -75,7 +75,7 @@ const AffinitiesContent = () => {
           <div className="column example">
             <section className="deityimg leftimg">
               <img 
-                src={`${process.env.PUBLIC_URL}/images/${deity.image}`} 
+                src={`/assets/${deity.image}`} 
                 alt={deity.name} 
               />
             </section>
