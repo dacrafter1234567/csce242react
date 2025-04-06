@@ -6,29 +6,6 @@ import axios from "axios";
 import ArconiaLogo from "../assets/ArconiaLogo.jpg";
 import discordlogo from "../assets/discordlogo.png";
 import deityData from './deities.json'; // Ensure correct path
-import auronixImg from "../assets/Arcana--AuronixTheKeeperOfLaylines.JPG";
-import mertisImg from "../assets/Creation--MertisCreatorOfPlanes.jpg";
-import dryntiasImg from "../assets/Darkness--DryntiasQueenOfTheVoid.jpg";
-import baelzirImg from "../assets/Destruction--BaelzirTheWrathfulWorldeater.jpg";
-import alterrImg from "../assets/Earth--AlterrTheGreatEarthbound.JPG";
-import ergovitsImg from "../assets/Energy--ErgovitsChampionOfTheCurrent.jpg";
-import ukpyrrhaImg from "../assets/Fire--UkpyrrhaFlameOfTheAncients.jpg";
-import essoektuImg from "../assets/Form--EssoektuTheUnboundedChangeling.jpg";
-import legyryxImg from "../assets/Gravity--LegyryxThePlanetaryForce.jpg";
-import seirlocryosImg from "../assets/Ice--Seirl-OcryosTheFrozenBlade.jpg";
-import mystliertisImg from "../assets/Illusion--MystliertisTheVehementTrickster.jpg";
-import seralineImg from "../assets/Light--SeralineTheUndyingStar.jpg";
-import orathisImg from "../assets/Lightning--OrathisTheEminentStormborn.jpg";
-import ferrsatoxImg from "../assets/Metal-FerrsatoxTheMightyShield.jpg";
-import jelaneurImg from "../assets/Mind--JelaneurTheGrandEyeSeer.jpg";
-import viristynImg from "../assets/Nature--ViristynTheWildMother.jpg";
-import venoliskImg from "../assets/Poison--VenoliskCorruptorOfRealms.jpg";
-import kershnaImg from "../assets/Shadow--KershnaTheMaskedEspionage.jpg";
-import yuksylnorImg from "../assets/Smoke--YukSylnorTheShroudedHunter.jpg";
-import madrisImg from "../assets/Sound--MadrisTheCelestialMuse.jpg";
-import verokinetisImg from "../assets/Speed--VerokinetisMessengerOfTheGods.jpg";
-import haedronmirImg from "../assets/Water--HaedronmirTheDeepMystic.jpg";
-import aeropirrImg from "../assets/Wind--AeropirrTheFourWinds.jpg";
 
 
 const DiscordSection = () => (
@@ -77,40 +54,19 @@ const StaffSection = () => (
   </section>
 );
 
-
-const imageMap = {
-  "Arcana--AuronixTheKeeperOfLaylines.JPG": auronixImg,
-  "Creation--MertisCreatorOfPlanes.jpg": mertisImg,
-  "Darkness--DryntiasQueenOfTheVoid.jpg": dryntiasImg,
-  "Destruction--BaelzirTheWrathfulWorldeater.jpg": baelzirImg,
-  "Earth--AlterrTheGreatEarthbound.JPG": alterrImg,
-  "Energy--ErgovitsChampionOfTheCurrent.jpg": ergovitsImg,
-  "Fire--UkpyrrhaFlameOfTheAncients.jpg": ukpyrrhaImg,
-  "Form--EssoektuTheUnboundedChangeling.jpg": essoektuImg,
-  "Gravity--LegyryxThePlanetaryForce.jpg": legyryxImg,
-  "Ice--Seirl-OcryosTheFrozenBlade.jpg": seirlocryosImg,
-  "Illusion--MystliertisTheVehementTrickster.jpg": mystliertisImg,
-  "Light--SeralineTheUndyingStar.jpg": seralineImg,
-  "Lightning--OrathisTheEminentStormborn.jpg": orathisImg,
-  "Metal-FerrsatoxTheMightyShield.jpg": ferrsatoxImg,
-  "Mind--JelaneurTheGrandEyeSeer.jpg": jelaneurImg,
-  "Nature--ViristynTheWildMother.jpg": viristynImg,
-  "Poison--VenoliskCorruptorOfRealms.jpg": venoliskImg,
-  "Shadow--KershnaTheMaskedEspionage.jpg": kershnaImg,
-  "Smoke--YukSylnorTheShroudedHunter.jpg": yuksylnorImg,
-  "Sound--MadrisTheCelestialMuse.jpg": madrisImg,
-  "Speed--VerokinetisMessengerOfTheGods.jpg": verokinetisImg,
-  "Water--HaedronmirTheDeepMystic.jpg": haedronmirImg,
-  "Wind--AeropirrTheFourWinds.jpg": aeropirrImg,
-};
-
 const AffinitiesContent = () => {
-  const [deities, setDeities] = useState([]);
+  const [deities, setDeitiesArchive] = useState([]);
 
   useEffect(() => {
-    // Just use imported JSON, no need for axios
-    setDeities(deityData);
+    (async () => {
+      const response = await axios.get(
+        "http://localhost:3001/api/deities/"
+      );
+      setDeitiesArchive(response.data);
+    })();
   }, []);
+
+  const imageBaseUrl = "http://localhost:3000/images/";
 
   return (
     <div className="deity-list">
@@ -119,7 +75,7 @@ const AffinitiesContent = () => {
           <div className="column example">
             <section className="deityimg leftimg">
               <img 
-                src={imageMap[deity.image]} 
+                src={`${process.env.PUBLIC_URL}/images/${deity.image}`} 
                 alt={deity.name} 
               />
             </section>
