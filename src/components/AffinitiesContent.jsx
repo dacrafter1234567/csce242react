@@ -1,6 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import "./css/AffinitiesContent.css";  // ✅ Make sure your styles are correct
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import "./css/AffinitiesContent.css";
+import axios from "axios";
+
 import ArconiaLogo from "../assets/ArconiaLogo.jpg";
 import discordlogo from "../assets/discordlogo.png";
 import deityData from './deities.json'; // Ensure correct path
@@ -103,38 +105,46 @@ const imageMap = {
 };
 
 const AffinitiesContent = () => {
-    return (
-      <div className="deity-list">
-        {deityData.map((deity, index) => (
-          <div key={index} className="deitybar">
-            <div className="column example">
-              <section className="deityimg leftimg">
-                <img 
-                  src={imageMap[deity.image]} 
-                  alt={deity.name} 
-                />
-              </section>
-              <section className="deitydesc">
-                <h3>{deity.name}</h3>
-                <p><strong>Elemental Affinity:</strong> {deity.elemental_affinity}</p>
-                <p><strong>Description:</strong> {deity.description}</p>
-                <p><strong>Gender:</strong> {deity.gender}</p>
-                <p><strong>Side:</strong> {deity.side}</p>
-                <p><strong>Alignment:</strong> {deity.alignment}</p>
-                <p><strong>Personality:</strong> {deity.personality}</p>
-                <p><strong>Devoted Guilds:</strong></p>
-                <ul>
-                  {deity.devoted_guilds.map((guild, idx) => (
-                    <li key={idx}>{guild}</li>
-                  ))}
-                </ul>
-              </section>
-            </div>
+  const [deities, setDeities] = useState([]);
+
+  useEffect(() => {
+    // Just use imported JSON, no need for axios
+    setDeities(deityData);
+  }, []);
+
+  return (
+    <div className="deity-list">
+      {deities.map((deity, index) => (
+        <div key={index} className="deitybar">
+          <div className="column example">
+            <section className="deityimg leftimg">
+              <img 
+                src={imageMap[deity.image]} 
+                alt={deity.name} 
+              />
+            </section>
+            <section className="deitydesc">
+              <h3>{deity.name}</h3>
+              <p><strong>Elemental Affinity:</strong> {deity.elemental_affinity}</p>
+              <p><strong>Description:</strong> {deity.description}</p>
+              <p><strong>Gender:</strong> {deity.gender}</p>
+              <p><strong>Side:</strong> {deity.side}</p>
+              <p><strong>Alignment:</strong> {deity.alignment}</p>
+              <p><strong>Personality:</strong> {deity.personality}</p>
+              <p><strong>Devoted Guilds:</strong></p>
+              <ul>
+                {deity.devoted_guilds.map((guild, idx) => (
+                  <li key={idx}>{guild}</li>
+                ))}
+              </ul>
+            </section>
           </div>
-        ))}
-      </div>
-    );
-  };
+        </div>
+      ))}
+    </div>
+  );
+};
+
   
 
 const MainContent = () => {
