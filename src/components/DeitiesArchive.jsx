@@ -7,7 +7,7 @@ const DeitiesArchive = ({ deityData }) => {
         <div key={index} className="deitybar">
           <div className="column example">
             <section className="deityimg leftimg">
-              <img src={`/assets/${deity.image}`} alt={deity.name} />
+              <img src={`./src/assets/${deity.image}`} alt={deity.name} />
             </section>
             <section className="deitydesc">
               <h3>{deity.name}</h3>
