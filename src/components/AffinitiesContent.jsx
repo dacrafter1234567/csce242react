@@ -10,7 +10,7 @@ const AffinitiesContent = () => {
   useEffect(() => {
     (async () => {
       const response = await axios.get(
-        "http://localhost:3000/api/deities/"
+        "https://csce242server-bfhe.onrender.com/api/deities"
       );
       setDeitiesArchive(response.data);
     })();
