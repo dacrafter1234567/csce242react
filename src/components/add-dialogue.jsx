@@ -10,6 +10,7 @@ const AddDialogue = (props) => {
         setResult("Sending...");
 
         const formData = new FormData(event.target);
+        console.log(...formData);
 
         const response = await fetch("http://localhost:3000/api/characters/", {
             method: "POST",
@@ -19,7 +20,10 @@ const AddDialogue = (props) => {
         if (response.status === 200) {
             setResult("Character Sucessfully Added");
             event.target.reset();
-            props.addCharacter(await response.json());
+            console.log("Attemptinh to add");
+            const data = await response.json();
+            console.log(data);
+            props.addCharacter(data);
             props.closeDialogue();
         } else {
             console.log("Error Adding Character", response);

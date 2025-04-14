@@ -12,15 +12,15 @@ const CharactersContent = () => {
     useEffect(() => {
       (async () => {
         const response = await axios.get(
-          //"http://localhost:3000/api/characters/"
-          "https://csce242server-bfhe.onrender.com/api/characters"
+          "http://localhost:3000/api/characters/"
+          //"https://csce242server-bfhe.onrender.com/api/characters"
         );
         setCharactersArchive(response.data);
       })();
     }, []);
 
     const addCharacter = (character) => {
-        setCharactersArchive((character) => [...characters, character]);
+        setCharactersArchive((characters) => [...characters, character]);
     };
 
     const openAddDialogue = () => {
@@ -43,8 +43,8 @@ const CharactersContent = () => {
             
                     <div className="character-grid">
                     {characters.map((character, index) => {
-                        const imagePath = character.image ? require(`../assets/${character.image}`) : null;
-
+                        //const imagePath = character.image ? require(`../assets/${character.image}`) : null;
+                        const imagePath = "http://localhost:3000/images/" + character.image;
                         return (
                             <div key={index} className="character">
                                 <div className="charcol">

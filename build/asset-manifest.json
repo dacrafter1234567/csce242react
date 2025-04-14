@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/csce242react/static/css/main.9ed62409.css",
-    "main.js": "/csce242react/static/js/main.97f71c76.js",
+    "main.js": "/csce242react/static/js/main.d8ece17b.js",
     "static/media/Frostvale.png": "/csce242react/static/media/Frostvale.010de40659c4ec54b33d.png",
     "static/media/arconiamapgradient.png": "/csce242react/static/media/arconiamapgradient.e8c232c1d0370e83b1de.png",
     "static/media/VerilSpires.png": "/csce242react/static/media/VerilSpires.e2e96fcfbc5ad74cd6c0.png",
@@ -52,10 +52,10 @@
     "static/media/discordlogo.png": "/csce242react/static/media/discordlogo.532540a2cb15c81438a1.png",
     "index.html": "/csce242react/index.html",
     "main.9ed62409.css.map": "/csce242react/static/css/main.9ed62409.css.map",
-    "main.97f71c76.js.map": "/csce242react/static/js/main.97f71c76.js.map"
+    "main.d8ece17b.js.map": "/csce242react/static/js/main.d8ece17b.js.map"
   },
   "entrypoints": [
     "static/css/main.9ed62409.css",
-    "static/js/main.97f71c76.js"
+    "static/js/main.d8ece17b.js"
   ]
 }
