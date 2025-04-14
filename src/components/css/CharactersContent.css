@@ -73,6 +73,8 @@
 
 
 .characterbar{
+    display: flex;
+    flex: 1;
     width: 300px;
     border-radius: 5px;
     margin: auto;
@@ -82,7 +84,7 @@
 }
 
 .character{
-    display: block;
+    display: flex;
     margin: 10px;
     flex: 1;
     border:3px solid #d4a03a;
@@ -122,6 +124,43 @@
     height: 300px;
     width:fit-content;
 }
+
+.column{
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  .character-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 30px;
+  }
+
+.buttonRow{
+    background-color: #021a36;
+}
+
+.charbtn {
+    background-color:#d4a03a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center;  
+    border: solid 3px white;
+    border-radius: 30px;
+    height: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.charbtn:hover {
+    background-color:#d4a13ac4;
+}
+
 
 @media (min-width: 700px) {
 

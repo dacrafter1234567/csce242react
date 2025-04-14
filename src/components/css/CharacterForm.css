@@ -1,0 +1,48 @@
+.add-dialogue {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .add-dialogue > div {
+    background-color: #051f40;
+    padding-left: 30px;
+    padding-right: 50px;
+    border: solid 2px white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  .add-dialogue form p {
+    margin-bottom: 1rem;
+  }
+  
+  .add-dialogue input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .add-dialogue button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #d4a03a;
+    color: white;
+    border: solid 1px white;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .add-dialogue button:hover {
+    background-color: #d4a13ac4;
+  }
+  
