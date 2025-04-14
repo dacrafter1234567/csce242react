@@ -12,8 +12,8 @@ const CharactersContent = () => {
     useEffect(() => {
       (async () => {
         const response = await axios.get(
-          "http://localhost:3000/api/characters/"
-          // "https://csce242server-bfhe.onrender.com/api/deities"
+          //"http://localhost:3000/api/characters/"
+          "https://csce242server-bfhe.onrender.com/api/deities"
         );
         setCharactersArchive(response.data);
       })();
