@@ -12,7 +12,8 @@ const AddDialogue = (props) => {
         const formData = new FormData(event.target);
         console.log(...formData);
 
-        const response = await fetch("http://localhost:3000/api/characters/", {
+        const response = await fetch("https://csce242server-bfhe.onrender.com/api/characters", {
+            //http://localhost:3000/images/
             method: "POST",
             body: formData,
         });
