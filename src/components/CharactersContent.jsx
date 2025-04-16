@@ -43,8 +43,9 @@ const CharactersContent = () => {
             
                     <div className="character-grid">
                     {characters.map((character, index) => {
-                        //const imagePath = character.image ? require(`../assets/${character.image}`) : null;
-                        const imagePath = "https://csce242server-bfhe.onrender.com/api/characters" + character.image;
+                        const imagePath = character.image ? `https://csce242server-bfhe.onrender.com/images/${character.image}` : null;
+
+                        //const imagePath = "https://csce242server-bfhe.onrender.com/api/characters" + character.image;
                         //http://localhost:3000/images/
                         return (
                             <div key={index} className="character">
