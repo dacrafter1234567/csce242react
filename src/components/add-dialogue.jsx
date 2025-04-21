@@ -18,43 +18,43 @@ const AddDialogue = (props) => {
     const onSubmit = async (event) => {
         event.preventDefault();
         setResult("Sending...");
-
+    
         const formData = new FormData();
         formData.append("name", inputs.name || "");
         formData.append("classcomp", inputs.classcomp || "");
         formData.append("agerace", inputs.agerace || "");
         formData.append("affinity", inputs.affinity || "");
-
+    
         // Append image if it's a new File
         if (inputs.img instanceof File) {
             formData.append("image", inputs.img);
         }
-
+    
         // Include original name if the name has changed in edit mode
         if (mode === "edit" && inputs.name !== originalName) {
             formData.append("originalName", originalName);
         }
-
+    
         // Debug log
         for (const [key, value] of formData.entries()) {
             console.log(`${key}:`, value);
         }
-
+    
+        const baseUrl = "https://csce242server-bfhe.onrender.com/api/characters";
         const url = mode === "edit"
-            ? `https://csce242server-bfhe.onrender.com/api/characters/${encodeURIComponent(originalName)}`
-            : "https://csce242server-bfhe.onrender.com/api/characters";
-            
-
+            ? `${baseUrl}/${encodeURIComponent(originalName)}`
+            : baseUrl;
+    
         const method = mode === "edit" ? "PUT" : "POST";
-
+    
         try {
             const response = await fetch(url, {
                 method: method,
                 body: formData,
             });
-
+    
             console.log("Submitting to:", url);
-
+    
             if (response.ok) {
                 const data = await response.json();
                 if (mode === "edit") {
@@ -77,6 +77,7 @@ const AddDialogue = (props) => {
             setResult("Error submitting character");
         }
     };
+    
 
     const handleChange = (event) => {
         const name = event.target.name;

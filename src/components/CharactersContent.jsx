@@ -91,7 +91,7 @@ const CharactersContent = () => {
             
                     <div className="character-grid">
                     {characters.map((character) => {
-    const imagePath = character.image ? `https://csce242server-bfhe.onrender.com/api/images/${character.image}` : null;
+    const imagePath = character.image ? `https://csce242server-bfhe.onrender.com/images${character.image}` : null;
 
 
     return (
