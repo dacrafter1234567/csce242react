@@ -161,6 +161,52 @@
     background-color:#d4a13ac4;
 }
 
+.deletebtn {
+    background-color:#d4a13a75;
+    border: solid 1px black;
+    cursor: pointer;
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center;  
+    border-radius: 10px;
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    float:right;
+}
+
+.deletebtn:hover {
+    background-color:#d4a13ac4;
+}
+
+.editbtn {
+    background-color:#d4a13a75;
+    border: solid 1px black;
+    cursor: pointer;
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center;  
+    border-radius: 10px;
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    float:right;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 
 @media (min-width: 700px) {
 
