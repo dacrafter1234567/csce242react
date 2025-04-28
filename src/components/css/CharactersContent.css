@@ -201,6 +201,10 @@
     float:right;
 }
 
+.editbtn:hover {
+    background-color:#d4a13ac4;
+}
+
 .clearfix::after {
     content: "";
     display: table;

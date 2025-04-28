@@ -4,91 +4,90 @@ import "./css/CharacterForm.css";
 const AddDialogue = (props) => {
     const [inputs, setInputs] = useState({});
     const [result, setResult] = useState("");
-    const [originalName, setOriginalName] = useState("");
+    const [originalId, setOriginalId] = useState("");
+    const [submitting, setSubmitting] = useState(false);
     const imageInputRef = useRef(null);
     const mode = props.mode || "create";
 
     useEffect(() => {
         if (props.character && mode === "edit") {
             setInputs(props.character);
-            setOriginalName(props.character.name);
+            setOriginalId(props.character._id);
+        } else {
+            setInputs({});
+            setOriginalId("");
         }
     }, [props.character, mode]);
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        setResult("Sending...");
-    
+        setResult("");
+        setSubmitting(true);
+
         const formData = new FormData();
         formData.append("name", inputs.name || "");
         formData.append("classcomp", inputs.classcomp || "");
         formData.append("agerace", inputs.agerace || "");
         formData.append("affinity", inputs.affinity || "");
-    
-        // Append image if it's a new File
+
         if (inputs.img instanceof File) {
             formData.append("image", inputs.img);
         }
-    
-        // Include original name if the name has changed in edit mode
-        if (mode === "edit" && inputs.name !== originalName) {
-            formData.append("originalName", originalName);
-        }
-    
-        // Debug log
-        for (const [key, value] of formData.entries()) {
-            console.log(`${key}:`, value);
-        }
-    
-        const baseUrl = "https://csce242server-bfhe.onrender.com/api/characters";
-        const url = mode === "edit"
-            ? `${baseUrl}/${encodeURIComponent(originalName)}`
+
+        const baseUrl = "https://csce242server-bfhe.onrender.com/api/characters/";
+        const url = mode === "edit" && inputs._id
+            ? `${baseUrl}/${inputs._id}`
             : baseUrl;
-    
         const method = mode === "edit" ? "PUT" : "POST";
-    
+
         try {
             const response = await fetch(url, {
                 method: method,
                 body: formData,
             });
-    
-            console.log("Submitting to:", url);
-    
+
+            console.log(`Submitting (${method}) to:`, url);
+
             if (response.ok) {
                 const data = await response.json();
                 if (mode === "edit") {
-                    props.editCharacter(data);
+                    props.editCharacter(data);  // 🧹 <- refresh the character list after edit
                 } else {
                     props.addCharacter(data);
                 }
-                props.closeDialogue();
                 setResult("Success!");
-                setInputs({});
-                if (imageInputRef.current) {
-                    imageInputRef.current.value = "";
-                }
+                setTimeout(() => {
+                    props.closeDialogue();
+                    resetForm();
+                }, 500);
             } else {
-                console.error("Error submitting:", response);
-                setResult("Error submitting character");
+                console.error("Server error submitting:", response.status);
+                setResult("Error submitting character (server error)");
             }
         } catch (error) {
             console.error("Request failed:", error);
-            setResult("Error submitting character");
+            setResult("Error submitting character (network error)");
+        } finally {
+            setSubmitting(false);
         }
     };
-    
+
+    const resetForm = () => {
+        setInputs({});
+        setOriginalId("");
+        if (imageInputRef.current) {
+            imageInputRef.current.value = "";
+        }
+    };
 
     const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
+        const { name, value } = event.target;
         setInputs((values) => ({ ...values, [name]: value }));
     };
 
     const handleImageChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.files[0];
-        setInputs((values) => ({ ...values, [name]: value }));
+        const { name, files } = event.target;
+        setInputs((values) => ({ ...values, [name]: files[0] }));
     };
 
     return (
@@ -109,6 +108,7 @@ const AddDialogue = (props) => {
                                 value={inputs.name || ""}
                                 onChange={handleChange}
                                 required
+                                disabled={submitting}
                             />
                         </p>
                         <p>
@@ -120,6 +120,7 @@ const AddDialogue = (props) => {
                                 value={inputs.classcomp || ""}
                                 onChange={handleChange}
                                 required
+                                disabled={submitting}
                             />
                         </p>
                         <p>
@@ -131,6 +132,7 @@ const AddDialogue = (props) => {
                                 value={inputs.agerace || ""}
                                 onChange={handleChange}
                                 required
+                                disabled={submitting}
                             />
                         </p>
                         <p>
@@ -142,6 +144,7 @@ const AddDialogue = (props) => {
                                 value={inputs.affinity || ""}
                                 onChange={handleChange}
                                 required
+                                disabled={submitting}
                             />
                         </p>
                         <section className="columns">
@@ -151,24 +154,19 @@ const AddDialogue = (props) => {
                                     type="file"
                                     id="img"
                                     name="img"
-                                    ref={imageInputRef}
                                     onChange={handleImageChange}
-                                    accept="image/*"
+                                    ref={imageInputRef}
+                                    disabled={submitting}
                                 />
-                                {inputs.img && typeof inputs.img !== "string" && (
-                                    <p>Selected file: {inputs.img.name}</p>
-                                )}
-                                {inputs.img && typeof inputs.img === "string" && mode === "edit" && (
-                                    <p>Current file: {inputs.img.split("/").pop()}</p>
-                                )}
                             </p>
                         </section>
-
                         <p>
-                            <button type="submit">Submit</button>
+                            <button type="submit" disabled={submitting}>
+                                {submitting ? "Saving..." : mode === "edit" ? "Update Character" : "Create Character"}
+                            </button>
                         </p>
+                        {result && <p>{result}</p>}
                     </form>
-                    <p>{result}</p>
                 </div>
             </div>
         </div>
