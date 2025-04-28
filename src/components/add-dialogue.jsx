@@ -34,25 +34,24 @@ const AddDialogue = (props) => {
             formData.append("image", inputs.img);
         }
 
-        const baseUrl = "https://csce242server-bfhe.onrender.com/api/characters/";
+        const baseUrl = "http://localhost:3000/api/characters";
         const url = mode === "edit" && inputs._id
             ? `${baseUrl}/${inputs._id}`
             : baseUrl;
         const method = mode === "edit" ? "PUT" : "POST";
 
         try {
-            console.log(`Submitting (${method}) to:`, url);
             const response = await fetch(url, {
                 method: method,
                 body: formData,
             });
 
+            console.log(`Submitting (${method}) to:`, url);
+
             if (response.ok) {
                 const data = await response.json();
-                console.log("Server response:", data);
-
                 if (mode === "edit") {
-                    props.editCharacter(data); // 🧹 <- refresh the character list after edit
+                    props.editCharacter(data);  // 🧹 <- refresh the character list after edit
                 } else {
                     props.addCharacter(data);
                 }
@@ -62,13 +61,12 @@ const AddDialogue = (props) => {
                     resetForm();
                 }, 500);
             } else {
-                const errorText = await response.text();
-                console.error("Server error submitting:", errorText);
-                setResult(`Error submitting character (server error): ${errorText}`);
+                console.error("Server error submitting:", response.status);
+                setResult("Error submitting character (server error)");
             }
         } catch (error) {
             console.error("Request failed:", error);
-            setResult(`Error submitting character (network error): ${error.message}`);
+            setResult("Error submitting character (network error)");
         } finally {
             setSubmitting(false);
         }
@@ -89,9 +87,6 @@ const AddDialogue = (props) => {
 
     const handleImageChange = (event) => {
         const { name, files } = event.target;
-        if (files[0]) {
-            console.log("Selected image:", files[0].name);
-        }
         setInputs((values) => ({ ...values, [name]: files[0] }));
     };
 
