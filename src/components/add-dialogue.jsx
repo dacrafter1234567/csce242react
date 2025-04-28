@@ -34,7 +34,7 @@ const AddDialogue = (props) => {
             formData.append("image", inputs.img);
         }
 
-        const baseUrl = "http://localhost:3000/api/characters";
+        const baseUrl = "https://csce242server-bfhe.onrender.com/api/characters";
         const url = mode === "edit" && inputs._id
             ? `${baseUrl}/${inputs._id}`
             : baseUrl;

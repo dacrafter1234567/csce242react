@@ -12,7 +12,7 @@ const CharactersContent = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get("http://localhost:3000/api/characters/");
+      const response = await axios.get("https://csce242server-bfhe.onrender.com/api/characters/");
       setCharactersArchive(response.data);
     })();
   }, []);
@@ -32,7 +32,7 @@ const CharactersContent = () => {
 
   const deleteCharacter = async (character) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/characters/${character._id}`, {
+      const response = await fetch(`https://csce242server-bfhe.onrender.com/api/characters/${character._id}`, {
         method: 'DELETE',
       });
 
@@ -79,7 +79,7 @@ const CharactersContent = () => {
 
               <div className="character-grid">
                 {characters.map((character) => {
-                  const imagePath = character.image ? `http://localhost:3000/images/${character.image}` : null;
+                  const imagePath = character.image ? `https://csce242server-bfhe.onrender.com/images/${character.image}` : null;
 
                   return (
                     <div key={character._id} className="character">
