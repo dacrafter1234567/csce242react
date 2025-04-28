@@ -41,17 +41,18 @@ const AddDialogue = (props) => {
         const method = mode === "edit" ? "PUT" : "POST";
 
         try {
+            console.log(`Submitting (${method}) to:`, url);
             const response = await fetch(url, {
                 method: method,
                 body: formData,
             });
 
-            console.log(`Submitting (${method}) to:`, url);
-
             if (response.ok) {
                 const data = await response.json();
+                console.log("Server response:", data);
+
                 if (mode === "edit") {
-                    props.editCharacter(data);  // 🧹 <- refresh the character list after edit
+                    props.editCharacter(data); // 🧹 <- refresh the character list after edit
                 } else {
                     props.addCharacter(data);
                 }
@@ -61,12 +62,13 @@ const AddDialogue = (props) => {
                     resetForm();
                 }, 500);
             } else {
-                console.error("Server error submitting:", response.status);
-                setResult("Error submitting character (server error)");
+                const errorText = await response.text();
+                console.error("Server error submitting:", errorText);
+                setResult(`Error submitting character (server error): ${errorText}`);
             }
         } catch (error) {
             console.error("Request failed:", error);
-            setResult("Error submitting character (network error)");
+            setResult(`Error submitting character (network error): ${error.message}`);
         } finally {
             setSubmitting(false);
         }
@@ -87,6 +89,9 @@ const AddDialogue = (props) => {
 
     const handleImageChange = (event) => {
         const { name, files } = event.target;
+        if (files[0]) {
+            console.log("Selected image:", files[0].name);
+        }
         setInputs((values) => ({ ...values, [name]: files[0] }));
     };
 
